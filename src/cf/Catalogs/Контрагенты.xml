@@ -198,7 +198,7 @@
 					<ToolTip/>
 					<FillChecking>DontCheck</FillChecking>
 					<Use>ForItem</Use>
-					<LineNumberLength>9</LineNumberLength>
+					<LineNumberLength>5</LineNumberLength>
 				</Properties>
 				<ChildObjects>
 					<Attribute uuid="75fabd78-864f-478b-b659-489863fb5da4">

@@ -43,8 +43,8 @@
 			</UsePurposes>
 			<ScriptVariant>Russian</ScriptVariant>
 			<DefaultRoles/>
-			<Vendor/>
-			<Version/>
+			<Vendor>Борисов Павел</Vendor>
+			<Version>1.0.0.2</Version>
 			<UpdateCatalogAddress/>
 			<IncludeHelpInContents>false</IncludeHelpInContents>
 			<UseManagedFormInOrdinaryApplication>false</UseManagedFormInOrdinaryApplication>
@@ -240,7 +240,7 @@
 			<SynchronousPlatformExtensionAndAddInCallUseMode>DontUse</SynchronousPlatformExtensionAndAddInCallUseMode>
 			<InterfaceCompatibilityMode>Taxi</InterfaceCompatibilityMode>
 			<DatabaseTablespacesUseMode>DontUse</DatabaseTablespacesUseMode>
-			<CompatibilityMode>Version8_3_27</CompatibilityMode>
+			<CompatibilityMode>Version8_3_25</CompatibilityMode>
 			<DefaultConstantsForm/>
 		</Properties>
 		<ChildObjects>
@@ -250,7 +250,11 @@
 			<Catalog>Контрагенты</Catalog>
 			<Document>Поступление</Document>
 			<Document>Реализация</Document>
+			<Enum>ВидыОпераций</Enum>
+			<Report>ОстаткиТоваровНаДату</Report>
+			<Report>ОборотыПоТоварам</Report>
 			<AccumulationRegister>ОстаткиТоваров</AccumulationRegister>
+			<AccumulationRegister>ОборотыТоваров</AccumulationRegister>
 		</ChildObjects>
 	</Configuration>
 </MetaDataObject>
