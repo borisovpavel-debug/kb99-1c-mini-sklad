@@ -9,24 +9,52 @@
 		<field xsi:type="DataSetFieldField">
 			<dataPath>Товар</dataPath>
 			<field>Товар</field>
-			<role>
-				<dcscom:dimension>true</dcscom:dimension>
-			</role>
 		</field>
 		<field xsi:type="DataSetFieldField">
 			<dataPath>КоличествоОстаток</dataPath>
 			<field>КоличествоОстаток</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Количество остаток</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>СтоимостьОстаток</dataPath>
+			<field>СтоимостьОстаток</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Партия</dataPath>
+			<field>Партия</field>
 		</field>
 		<dataSource>ИсточникДанных1</dataSource>
 		<query>ВЫБРАТЬ
-	ОстаткиТоваровОстатки.Товар КАК Товар,
-	ОстаткиТоваровОстатки.КоличествоОстаток КАК КоличествоОстаток
+	Товары.Ссылка КАК Товар,
+	ЕСТЬNULL(Остатки.КоличествоОстаток, 0) КАК КоличествоОстаток,
+	ЕСТЬNULL(Партии.СтоимостьОстаток, 0) КАК СтоимостьОстаток
 ИЗ
-	РегистрНакопления.ОстаткиТоваров.Остатки(&amp;НаДату, ) КАК ОстаткиТоваровОстатки</query>
+	Справочник.Товары КАК Товары
+		ЛЕВОЕ СОЕДИНЕНИЕ РегистрНакопления.ОстаткиТоваров.Остатки(КОНЕЦПЕРИОДА(&amp;НаДату, ДЕНЬ), ) КАК Остатки
+		ПО Товары.Ссылка = Остатки.Товар
+		ЛЕВОЕ СОЕДИНЕНИЕ (ВЫБРАТЬ
+			ПартииОстатки.Товар КАК Товар,
+			СУММА(ПартииОстатки.СтоимостьОстаток) КАК СтоимостьОстаток
+		ИЗ
+			РегистрНакопления.ПартииТоваров.Остатки(КОНЕЦПЕРИОДА(&amp;НаДату, ДЕНЬ), ) КАК ПартииОстатки
+		СГРУППИРОВАТЬ ПО
+			ПартииОстатки.Товар) КАК Партии
+		ПО Товары.Ссылка = Партии.Товар
+ГДЕ
+	НЕ Товары.ПометкаУдаления</query>
 	</dataSet>
 	<totalField>
 		<dataPath>КоличествоОстаток</dataPath>
 		<expression>Сумма(КоличествоОстаток)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>СтоимостьОстаток</dataPath>
+		<expression>Сумма(СтоимостьОстаток)</expression>
 	</totalField>
 	<parameter>
 		<name>Период</name>
@@ -72,6 +100,9 @@
 				</dcsset:item>
 				<dcsset:item xsi:type="dcsset:SelectedItemField">
 					<dcsset:field>КоличествоОстаток</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>СтоимостьОстаток</dcsset:field>
 				</dcsset:item>
 			</dcsset:selection>
 			<dcsset:dataParameters>

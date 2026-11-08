@@ -116,9 +116,6 @@
 			</UseAlways>
 		</Attribute>
 	</Attributes>
-	<Commands>
-		<Command name="Команда1" id="1"/>
-	</Commands>
 	<CommandInterface>
 		<NavigationPanel>
 			<Item>
