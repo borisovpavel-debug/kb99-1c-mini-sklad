@@ -252,6 +252,7 @@
 			<Document>Поступление</Document>
 			<Document>Реализация</Document>
 			<Enum>ВидыОпераций</Enum>
+			<Enum>ВидыКонтактнойИнформации</Enum>
 			<Report>ОстаткиТоваровНаДату</Report>
 			<Report>ОборотыПоТоварам</Report>
 			<AccumulationRegister>ОстаткиТоваров</AccumulationRegister>
