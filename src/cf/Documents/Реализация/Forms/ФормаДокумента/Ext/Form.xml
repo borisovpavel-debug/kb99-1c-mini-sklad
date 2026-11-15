@@ -4,6 +4,9 @@
 	<UsePostingMode>Auto</UsePostingMode>
 	<RepostOnWrite>true</RepostOnWrite>
 	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1"/>
+	<Events>
+		<Event name="ChoiceProcessing">ОбработкаВыбора</Event>
+	</Events>
 	<ChildItems>
 		<InputField name="Номер" id="1">
 			<DataPath>Объект.Number</DataPath>
@@ -26,6 +29,11 @@
 			<ContextMenu name="КонтрагентКонтекстноеМеню" id="8"/>
 			<ExtendedTooltip name="КонтрагентРасширеннаяПодсказка" id="9"/>
 		</InputField>
+		<Button name="Подбор" id="38">
+			<Type>UsualButton</Type>
+			<CommandName>Form.Command.Подбор</CommandName>
+			<ExtendedTooltip name="ПодборРасширеннаяПодсказка" id="39"/>
+		</Button>
 		<Table name="Товары" id="10">
 			<Representation>List</Representation>
 			<AutoInsertNewRow>true</AutoInsertNewRow>
@@ -60,6 +68,9 @@
 				<ContextMenu name="ТоварыУправлениеПоискомКонтекстноеМеню" id="21"/>
 				<ExtendedTooltip name="ТоварыУправлениеПоискомРасширеннаяПодсказка" id="22"/>
 			</SearchControlAddition>
+			<Events>
+				<Event name="ChoiceProcessing">ТоварыОбработкаВыбора</Event>
+			</Events>
 			<ChildItems>
 				<LabelField name="ТоварыНомерСтроки" id="23">
 					<DataPath>Объект.Товары.LineNumber</DataPath>
@@ -116,6 +127,23 @@
 			</UseAlways>
 		</Attribute>
 	</Attributes>
+	<Commands>
+		<Command name="Подбор" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Подбор</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Подбор</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>Подбор</Action>
+		</Command>
+	</Commands>
 	<CommandInterface>
 		<NavigationPanel>
 			<Item>
