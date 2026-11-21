@@ -66,6 +66,9 @@
 				<ContextMenu name="КонтактнаяИнформацияУправлениеПоискомКонтекстноеМеню" id="27"/>
 				<ExtendedTooltip name="КонтактнаяИнформацияУправлениеПоискомРасширеннаяПодсказка" id="28"/>
 			</SearchControlAddition>
+			<Events>
+				<Event name="BeforeRowChange">КонтактнаяИнформацияПередНачаломИзменения</Event>
+			</Events>
 			<ChildItems>
 				<LabelField name="КонтактнаяИнформацияНомерСтроки" id="29">
 					<DataPath>Объект.КонтактнаяИнформация.LineNumber</DataPath>
@@ -108,6 +111,9 @@
 					</ChoiceList>
 					<ContextMenu name="КонтактнаяИнформацияНазваниеКонтактнойИнформацииКонтекстноеМеню" id="33"/>
 					<ExtendedTooltip name="КонтактнаяИнформацияНазваниеКонтактнойИнформацииРасширеннаяПодсказка" id="34"/>
+					<Events>
+						<Event name="OnChange">КонтактнаяИнформацияНазваниеКонтактнойИнформацииПриИзменении</Event>
+					</Events>
 				</InputField>
 				<InputField name="КонтактнаяИнформацияЗначениеКонтактнойИнформации" id="41">
 					<DataPath>Объект.КонтактнаяИнформация.ЗначениеКонтактнойИнформации</DataPath>
@@ -115,9 +121,6 @@
 					<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
 					<ContextMenu name="КонтактнаяИнформацияЗначениеКонтактнойИнформацииКонтекстноеМеню" id="42"/>
 					<ExtendedTooltip name="КонтактнаяИнформацияЗначениеКонтактнойИнформацииРасширеннаяПодсказка" id="43"/>
-					<Events>
-						<Event name="OnChange">КонтактнаяИнформацияЗначениеКонтактнойИнформацииПриИзменении</Event>
-					</Events>
 				</InputField>
 				<InputField name="КонтактнаяИнформацияКонтактноеЛицо" id="38">
 					<DataPath>Объект.КонтактнаяИнформация.КонтактноеЛицо</DataPath>
