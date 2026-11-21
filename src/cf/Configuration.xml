@@ -246,15 +246,25 @@
 		<ChildObjects>
 			<Language>Русский</Language>
 			<Subsystem>МиниСклад</Subsystem>
+			<SessionParameter>ИмяТекущегоПользователя</SessionParameter>
+			<Role>Администратор</Role>
+			<Role>Менеджер</Role>
+			<Role>Кладовщик</Role>
+			<Role>Гость</Role>
 			<CommonModule>РаботаСТоварамиКлиент</CommonModule>
+			<CommonModule>РегламентныеПроцедуры</CommonModule>
+			<ScheduledJob>ОбновлениеСтатусовТоваров</ScheduledJob>
 			<Catalog>Товары</Catalog>
 			<Catalog>Контрагенты</Catalog>
+			<Catalog>Склады</Catalog>
+			<Catalog>СтатусыТоваров</Catalog>
 			<Document>Поступление</Document>
 			<Document>Реализация</Document>
 			<Enum>ВидыОпераций</Enum>
 			<Enum>ВидыКонтактнойИнформации</Enum>
 			<Report>ОстаткиТоваровНаДату</Report>
 			<Report>ОборотыПоТоварам</Report>
+			<InformationRegister>СкладыПользователей</InformationRegister>
 			<AccumulationRegister>ОстаткиТоваров</AccumulationRegister>
 			<AccumulationRegister>ОборотыТоваров</AccumulationRegister>
 			<AccumulationRegister>ПартииТоваров</AccumulationRegister>
