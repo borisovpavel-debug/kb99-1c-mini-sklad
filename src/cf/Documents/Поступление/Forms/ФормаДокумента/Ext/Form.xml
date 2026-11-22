@@ -66,9 +66,6 @@
 				<ContextMenu name="ТоварыУправлениеПоискомКонтекстноеМеню" id="21"/>
 				<ExtendedTooltip name="ТоварыУправлениеПоискомРасширеннаяПодсказка" id="22"/>
 			</SearchControlAddition>
-			<Events>
-				<Event name="OnChange">ТоварыПриИзменении</Event>
-			</Events>
 			<ChildItems>
 				<LabelField name="ТоварыНомерСтроки" id="23">
 					<DataPath>Объект.Товары.LineNumber</DataPath>
