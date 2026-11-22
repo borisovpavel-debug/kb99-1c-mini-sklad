@@ -124,6 +124,15 @@
 		<right>
 			<name>Read</name>
 			<value>true</value>
+			<restrictionByCondition>
+				<condition>ГДЕ Склад В (
+	ВЫБРАТЬ
+		СкладыПользователей.Склад
+	ИЗ
+		РегистрСведений.СкладыПользователей КАК СкладыПользователей
+	ГДЕ
+		СкладыПользователей.Пользователь = &amp;ИмяТекущегоПользователя)</condition>
+			</restrictionByCondition>
 		</right>
 		<right>
 			<name>View</name>
@@ -536,10 +545,6 @@
 		</right>
 		<right>
 			<name>Edit</name>
-			<value>true</value>
-		</right>
-		<right>
-			<name>InteractiveDelete</name>
 			<value>true</value>
 		</right>
 		<right>
